@@ -1,0 +1,16 @@
+.
+├── cmd
+│   └── web
+│       ├── main.go
+│       └── routes.go
+├── go.mod
+├── go.sum
+├── html
+│   ├── home.html
+│   └── home.jet
+├── internal
+│   └── handlers
+│       └── handlers.go
+└── tree.txt
+
+6 directories, 8 files
