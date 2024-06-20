@@ -55,24 +55,21 @@
         socket = new WebSocket('ws://localhost:9090/ws');
 
         socket.onopen = () => {
-            console.log('Connection established');
+            console.log('Successfully Connected');
         };
 
         socket.onclose = () => {
             console.log('Connection closed');
         };
 
-        socket.onmessage = msg => {
-            console.log('Message: ' + msg.data);
-            let data = JSON.parse(event.data);
-            let output = document.getElementById('output');
-            let message = document.createElement('div');
-            message.innerHTML = `<strong>${data.username}</strong>: ${data.message}`;
-            output.appendChild(message);
-        };
-
         socket.onerror = error => {
             console.log('Error: ' + error.message);
+        };
+
+        socket.onmessage = msg => {
+            console.log(msg);
+            let j = JSON.parse(msg.data);
+            console.log(j);
         };
 
     });

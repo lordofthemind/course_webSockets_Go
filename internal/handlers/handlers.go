@@ -119,7 +119,7 @@ func broadcastToAll(response WsJsonResponse) {
 	for client := range clients {
 		err := client.WriteJSON(response)
 		if err != nil {
-			log.Println(err)
+			log.Println("Websocket error: ", err)
 			_ = client.Close()
 			delete(clients, client)
 		}
